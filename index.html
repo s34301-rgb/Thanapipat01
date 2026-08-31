@@ -13,9 +13,8 @@
         }
 
         body {
-            /* 1. ใส่รูปพื้นหลัง + สีมืดทับแบบโปร่งแสง (Overlay) เพื่อให้ข้อความอ่านง่ายขึ้น */
-            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
-                              url('https://images6.alphacoders.com/137/1379243.jpg'); /* <-- เปลี่ยนชื่อไฟล์รูปภาพพื้นหลังตรงนี้ */
+            /* 1. ใส่รูปพื้นหลังเพียวๆ ไม่เอาสีดำมาบัง */
+            background-image: url('bg.jpg'); /* <-- เปลี่ยนชื่อไฟล์รูปภาพพื้นหลังตรงนี้ */
             
             /* 2. การตั้งค่าให้ภาพพื้นหลังปรับขนาด Auto และเต็มหน้าจอ */
             background-size: cover;       /* ปรับขนาดรูปให้คลุมเต็มพื้นที่หน้าจออัตโนมัติ */
@@ -23,7 +22,7 @@
             background-repeat: no-repeat; /* ไม่ให้รูปแสดงซ้ำ */
             background-attachment: fixed; /* ล็อคพื้นหลังให้อยู่กับที่เวลาสโครล */
 
-            color: #f8fafc;
+            color: #ffffff;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -38,14 +37,17 @@
             letter-spacing: 2px;
             margin-bottom: 15px;
             color: #38bdf8;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความเด่นขึ้น */
+            /* เพิ่มเงาเข้มหลังตัวอักษรเพื่อให้ยังคงอ่านง่ายแม้ภาพพื้นหลังจะสว่าง */
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.85); 
         }
 
         p {
-            font-size: 1.2rem;
-            color: #e2e8f0;
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 500;
             margin-bottom: 35px;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+            /* เพิ่มเงาเข้มหลังตัวอักษร */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85);
         }
 
         .btn {
@@ -58,14 +60,14 @@
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
 
         .btn:hover {
             background-color: #0284c7;
             color: #ffffff;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
         }
     </style>
 </head>
