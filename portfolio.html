@@ -42,11 +42,17 @@
             color: #94a3b8;
             text-decoration: none;
             font-size: 1rem;
-            transition: color 0.3s ease;
+            padding: 8px 16px;
+            background-color: #1e293b;
+            border-radius: 20px;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
         }
 
         .btn-back:hover {
-            color: #38bdf8;
+            color: #ffffff;
+            background-color: #38bdf8;
+            border-color: #38bdf8;
         }
 
         .grid {
@@ -58,26 +64,30 @@
         .card {
             background-color: #1e293b;
             border-radius: 12px;
-            overflow: hidden; /* ป้องกันรูปภาพล้นขอบมนของการ์ด */
+            overflow: hidden;
             border: 1px solid #334155;
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
             transform: translateY(-5px);
         }
 
-        /* --- ส่วนจัดการรูปภาพ --- */
         .card-img {
-            width: 100%;       /* ความกว้างเต็มการ์ด */
-            height: auto;      /* ความสูงปรับอัตโนมัติตามสัดส่วนภาพ */
-            max-height: 200px; /* (ใส่หรือไม่ใส่ก็ได้) ล็อคความสูงไม่ให้เกิน 200px เพื่อความเรียบร้อย */
-            object-fit: cover; /* ตัดส่วนเกินของรูปให้พอดีกล่อง ไม่เบี้ยว */
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
             display: block;
         }
 
         .card-content {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* จัดระเบียบเนื้อหาให้ดันปุ่มลงล่างสุดเสมอ */
         }
 
         .card h3 {
@@ -88,6 +98,29 @@
         .card p {
             color: #94a3b8;
             font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* --- สไตล์ปุ่มกดเปิดดูโปรเจกต์ --- */
+        .btn-project {
+            display: inline-block;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #0f172a;
+            background-color: #38bdf8;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+        }
+
+        .btn-project:hover {
+            background-color: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
         }
     </style>
 </head>
@@ -100,31 +133,33 @@
         </div>
 
         <div class="grid">
-            <!-- ผลงานที่ 1 -->
+            <!-- การ์ดที่ 1 -->
             <div class="card">
-                <!-- เปลี่ยน URL หรือชื่อไฟล์รูปภาพตรง src="..." -->
-                <img src="https://cdn.indexgame.in.th/game-assets/812006a4-70e4-44a5-8418-ac6191b50b0e.webp" alt="Project 1" class="card-img">
+                <img src="https://via.placeholder.com/600x400" alt="Project 1" class="card-img">
                 <div class="card-content">
                     <h3>Project Title 1</h3>
                     <p>รายละเอียดสรุปของโปรเจกต์ที่ 1 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                    <a href="project1.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
 
-            <!-- ผลงานที่ 2 -->
+            <!-- การ์ดที่ 2 -->
             <div class="card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6iVh8jkFvJo_GX5_eBSBcRqBsttNEcqAPn_NdSMsfHiBJmrrIFEt1ovea&s=10" alt="Project 2" class="card-img">
+                <img src="https://via.placeholder.com/600x400" alt="Project 2" class="card-img">
                 <div class="card-content">
                     <h3>Project Title 2</h3>
                     <p>รายละเอียดสรุปของโปรเจกต์ที่ 2 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                    <a href="project2.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
 
-            <!-- ผลงานที่ 3 -->
+            <!-- การ์ดที่ 3 -->
             <div class="card">
-                <img src="https://prod.assets.earlygamecdn.com/images/Wuthering-Waves-To-The-Shores-End-Review.jpg?transform=Banner+Webp" alt="Project 3" class="card-img">
+                <img src="https://via.placeholder.com/600x400" alt="Project 3" class="card-img">
                 <div class="card-content">
                     <h3>Project Title 3</h3>
                     <p>รายละเอียดสรุปของโปรเจกต์ที่ 3 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                    <a href="project3.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
         </div>
