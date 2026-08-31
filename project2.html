@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            /* รูปภาพพื้นหลังของหน้านี้ */
+            background-image: url('bg-project1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #f8fafc;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #38bdf8;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        .btn-back {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 16px;
+            background-color: #1e293b;
+            border-radius: 20px;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            color: #ffffff;
+            background-color: #38bdf8;
+            border-color: #38bdf8;
+        }
+
+        /* --- รายการข้อความ 6 ข้อ แบบมีรูปภาพพื้นหลัง --- */
+        .details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .detail-item-bg {
+            position: relative;
+            border-radius: 12px;
+            padding: 30px 25px;
+            border: 1px solid #334155;
+            overflow: hidden;
+            
+            /* การตั้งค่ารูปภาพพื้นหลัง */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 220px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* ใส่แผ่นสีดำโปร่งแสงทับรูป เพื่อให้ตัวหนังสืออ่านง่ายขึ้น */
+        .detail-item-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85));
+            z-index: 1;
+        }
+
+        /* ดันตัวหนังสือให้ลอยขึ้นมาอยู่เหนือแผ่นสีดำ */
+        .detail-item-bg h3, 
+        .detail-item-bg p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .detail-item-bg h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+
+        .detail-item-bg p {
+            color: #f1f5f9;
+            font-size: 1rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Project2 - รายละเอียดโปรเจกต์</h1>
+            <a href="portfolio.html" class="btn-back">← กลับหน้าผลงาน</a>
+        </div>
+
+        <div class="details-list">
+            <div class="detail-item-bg" style="background-image: url('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/03/wuthering-waves-cantarella-team-composition-guide-build.jpg?w=1600&h=900&fit=crop');">
+                <h3>1. หัวข้อหรือรายละเอียดข้อที่ 1</h3>
+                <p>ใส่ข้อความอธิบายความสำคัญ เป้าหมาย หรือที่มาของโปรเจกต์นี้ในส่วนข้อที่ 1</p>
+            </div>
+
+            <div class="detail-item-bg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9EVa_FAkad15kOvaJrQAK71mvCrSucktHIjl4en3ZEw&s=10');">
+                <h3>2. หัวข้อหรือรายละเอียดข้อที่ 2</h3>
+                <p>ใส่ข้อความอธิบายเกี่ยวกับฟีเจอร์หลัก หรือเทคโนโลยีที่ใช้ในการพัฒนางานชิ้นนี้</p>
+            </div>
+
+            <div class="detail-item-bg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4SUwnjqsqaWcEwQlMrWjsRN2kgDfa5tO6HncAZzZRjTGd7HpocCvsc-o&s=10');">
+                <h3>3. หัวข้อหรือรายละเอียดข้อที่ 3</h3>
+                <p>ใส่ข้อความอธิบายขั้นตอนการออกแบบ UX/UI หรือโครงสร้างของโปรเจกต์</p>
+            </div>
+
+            <div class="detail-item-bg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmmy-XjndOXWReyWDYCoY9oFRFnvMr121Mww5H8cHQwDjwhq9ZDQg_F7Kv&s=10');">
+                <h3>4. หัวข้อหรือรายละเอียดข้อที่ 4</h3>
+                <p>ใส่ข้อความอธิบายเกี่ยวกับปัญหาที่พบ และวิธีแก้ไขปัญหาระหว่างการทำโปรเจกต์</p>
+            </div>
+
+            <div class="detail-item-bg" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShyN1Di386bzkBt4EYlrXVltBWtSfIQs60V-ZR00F8o--7jEJw2kuL9rgR&s=10');">
+                <h3>5. หัวข้อหรือรายละเอียดข้อที่ 5</h3>
+                <p>ใส่ข้อความสรุปผลลัพธ์ของโปรเจกต์ หรือยอดผู้ใช้งาน / ฟีดแบ็กที่ได้รับ</p>
+            </div>
+
+            <div class="detail-item-bg" style="background-image: url('https://i.makeagif.com/media/10-02-2024/X5Rbjk.gif');">
+                <h3>6. หัวข้อหรือรายละเอียดข้อที่ 6</h3>
+                <p>ใส่ข้อความเกี่ยวกับแผนการพัฒนาต่อยอดในอนาคต หรือช่องทางการติดต่อ/ทดลองใช้งาน</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
