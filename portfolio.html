@@ -58,13 +58,26 @@
         .card {
             background-color: #1e293b;
             border-radius: 12px;
-            padding: 25px;
+            overflow: hidden; /* ป้องกันรูปภาพล้นขอบมนของการ์ด */
             border: 1px solid #334155;
             transition: transform 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
+        }
+
+        /* --- ส่วนจัดการรูปภาพ --- */
+        .card-img {
+            width: 100%;       /* ความกว้างเต็มการ์ด */
+            height: auto;      /* ความสูงปรับอัตโนมัติตามสัดส่วนภาพ */
+            max-height: 200px; /* (ใส่หรือไม่ใส่ก็ได้) ล็อคความสูงไม่ให้เกิน 200px เพื่อความเรียบร้อย */
+            object-fit: cover; /* ตัดส่วนเกินของรูปให้พอดีกล่อง ไม่เบี้ยว */
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
         }
 
         .card h3 {
@@ -87,17 +100,32 @@
         </div>
 
         <div class="grid">
+            <!-- ผลงานที่ 1 -->
             <div class="card">
-                <h3>Project Title 1</h3>
-                <p>รายละเอียดสรุปของโปรเจกต์ที่ 1 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                <!-- เปลี่ยน URL หรือชื่อไฟล์รูปภาพตรง src="..." -->
+                <img src="https://cdn.indexgame.in.th/game-assets/812006a4-70e4-44a5-8418-ac6191b50b0e.webp" alt="Project 1" class="card-img">
+                <div class="card-content">
+                    <h3>Project Title 1</h3>
+                    <p>รายละเอียดสรุปของโปรเจกต์ที่ 1 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                </div>
             </div>
+
+            <!-- ผลงานที่ 2 -->
             <div class="card">
-                <h3>Project Title 2</h3>
-                <p>รายละเอียดสรุปของโปรเจกต์ที่ 2 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                <img src="https://via.placeholder.com/600x400" alt="Project 2" class="card-img">
+                <div class="card-content">
+                    <h3>Project Title 2</h3>
+                    <p>รายละเอียดสรุปของโปรเจกต์ที่ 2 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                </div>
             </div>
+
+            <!-- ผลงานที่ 3 -->
             <div class="card">
-                <h3>Project Title 3</h3>
-                <p>รายละเอียดสรุปของโปรเจกต์ที่ 3 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                <img src="https://via.placeholder.com/600x400" alt="Project 3" class="card-img">
+                <div class="card-content">
+                    <h3>Project Title 3</h3>
+                    <p>รายละเอียดสรุปของโปรเจกต์ที่ 3 อธิบายเทคโนโลยีที่ใช้หรือความน่าสนใจของงาน</p>
+                </div>
             </div>
         </div>
     </div>
