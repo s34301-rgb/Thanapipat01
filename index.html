@@ -13,7 +13,16 @@
         }
 
         body {
-            background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+            /* 1. ใส่รูปพื้นหลัง + สีมืดทับแบบโปร่งแสง (Overlay) เพื่อให้ข้อความอ่านง่ายขึ้น */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                              url('https://gachago.com/wp-content/uploads/2024/09/wuthering-1.3.jpg'); /* <-- เปลี่ยนชื่อไฟล์รูปภาพพื้นหลังตรงนี้ */
+            
+            /* 2. การตั้งค่าให้ภาพพื้นหลังปรับขนาด Auto และเต็มหน้าจอ */
+            background-size: cover;       /* ปรับขนาดรูปให้คลุมเต็มพื้นที่หน้าจออัตโนมัติ */
+            background-position: center;  /* จัดรูปภาพให้อยู่ตรงกลางเสมอ */
+            background-repeat: no-repeat; /* ไม่ให้รูปแสดงซ้ำ */
+            background-attachment: fixed; /* ล็อคพื้นหลังให้อยู่กับที่เวลาสโครล */
+
             color: #f8fafc;
             height: 100vh;
             display: flex;
@@ -29,12 +38,14 @@
             letter-spacing: 2px;
             margin-bottom: 15px;
             color: #38bdf8;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความเด่นขึ้น */
         }
 
         p {
             font-size: 1.2rem;
-            color: #94a3b8;
+            color: #e2e8f0;
             margin-bottom: 35px;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
         }
 
         .btn {
