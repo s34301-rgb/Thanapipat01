@@ -13,14 +13,11 @@
         }
 
         body {
-            /* 1. ใส่รูปพื้นหลังเพียวๆ ไม่เอาสีดำมาบัง */
-            background-image: url('https://giffiles.alphacoders.com/224/224437.gif'); /* <-- เปลี่ยนชื่อไฟล์รูปภาพพื้นหลังตรงนี้ */
-            
+            background-image: url('https://giffiles.alphacoders.com/224/224437.gif');
             background-size: cover;       
             background-position: center;  
             background-repeat: no-repeat; 
             background-attachment: fixed; 
-
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -31,22 +28,18 @@
             padding: 40px 20px;
         }
 
-        /* --- กรอบรูปภาพสัดส่วน 16:9 ดีไซน์สวยงาม --- */
         .profile-frame {
             width: 100%;
-            max-width: 560px; /* ขนาดความกว้างของกรอบรูป */
-            aspect-ratio: 16 / 9; /* บังคับสัดส่วน 16:9 อัตโนมัติ */
+            max-width: 560px;
+            aspect-ratio: 16 / 9;
             border-radius: 16px;
             overflow: hidden;
-            
-            /* แต่งขอบเรืองแสงและเงาให้ดูมีมิติ */
             border: 2px solid rgba(56, 189, 248, 0.6);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6),
                         0 0 20px rgba(56, 189, 248, 0.3);
             backdrop-filter: blur(5px);
             background-color: rgba(15, 23, 42, 0.6);
-            
-            margin-bottom: 25px; /* เว้นระยะห่างจากตัวหนังสือด้านล่าง */
+            margin-bottom: 25px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -59,11 +52,10 @@
         .profile-img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* ครอปรูปให้เต็มสัดส่วน 16:9 โดยภาพไม่เบี้ยว */
+            object-fit: cover;
             display: block;
         }
 
-        /* --- ส่วนข้อความและปุ่มกด (ขยับลงมาด้านล่าง) --- */
         h1 {
             font-size: 3.5rem;
             letter-spacing: 2px;
@@ -78,6 +70,7 @@
             font-weight: 500;
             margin-bottom: 30px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85);
+            line-height: 1.8;
         }
 
         .btn {
@@ -103,16 +96,13 @@
 </head>
 <body>
 
-    <!-- กรอบรูปภาพ 16:9 -->
     <div class="profile-frame">
-        <!-- เปลี่ยนชื่อไฟล์รูปของคุณตรง src="..." ได้เลย -->
         <img src="https://simulationdaily.com/wp-content/uploads/fecb417e-changli-wuthering-waves-art.jpg" alt="Profile Image" class="profile-img">
     </div>
 
-    <!-- ส่วนข้อความและปุ่มกดด้านล่าง -->
     <h1>PORTFOLIO</h1>
-    <p>ยินดีค้อนรับเจ้าสู่แฟ้มสะสมผลงานของผม นาย ธนาพิพัฒน์ เกียรติ์มีชัย</p>
-    <a href="portfolio.html" class="btn">เข้าดูผลงาน</a>
+    <p>ยินดีต้อนรับสู่แฟ้มสะสมผลงานของผม<br>นาย ธนาพิพัฒน์ เกียรติ์มีชัย<br>มัธยมศึกษาปีที่ 6 โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
+    <a href="about.html" class="btn">เริ่มต้นรู้จักกัน →</a>
 
 </body>
 </html>
