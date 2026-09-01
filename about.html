@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - ประวัติส่วนตัว</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-image: url('https://giffiles.alphacoders.com/224/224437.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .about-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(56, 189, 248, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7),
+                        0 0 25px rgba(56, 189, 248, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #38bdf8;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .info-list {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+
+        .info-item {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-label {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .info-value {
+            color: #f8fafc;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-secondary {
+            color: #94a3b8;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+        }
+
+        .btn-secondary:hover {
+            color: #ffffff;
+            background-color: #334155;
+        }
+
+        .btn-primary {
+            color: #0f172a;
+            background-color: #38bdf8;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #0284c7;
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-card">
+        <h1>ABOUT ME</h1>
+
+        <div class="info-list">
+            <div class="info-item">
+                <span class="info-label">ชื่อ-นามสกุล:</span>
+                <span class="info-value">นาย ธนาพิพัฒน์ เกียรติ์มีชัย</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">ชื่อเล่น:</span>
+                <span class="info-value">พี</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">อายุ:</span>
+                <span class="info-value">17 ปี</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">วันเกิด:</span>
+                <span class="info-value">29 ธันวาคม 2551</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">เชื้อชาติ / สัญชาติ:</span>
+                <span class="info-value">ไทย / ไทย</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">ศาสนา:</span>
+                <span class="info-value">พุทธ</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">เบอร์โทรติดต่อ:</span>
+                <span class="info-value">0999999999</span>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="index.html" class="btn btn-secondary">← ย้อนกลับ</a>
+            <a href="portfolio.html" class="btn btn-primary">เข้าดูผลงาน →</a>
+        </div>
+    </div>
+
+</body>
+</html>
