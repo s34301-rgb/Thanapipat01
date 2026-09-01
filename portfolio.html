@@ -66,13 +66,16 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #334155;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
         }
 
         .card-img {
@@ -98,28 +101,45 @@
         .card p {
             color: #94a3b8;
             font-size: 0.9rem;
-            margin-bottom: 20px;
-            flex-grow: 1;
         }
 
-        .btn-project {
-            display: inline-block;
-            text-align: center;
-            padding: 10px 20px;
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: #0f172a;
-            background-color: #38bdf8;
+        /* Modal สำหรับขยายรูปภาพขนาดเต็ม */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
             border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #334155;
         }
 
-        .btn-project:hover {
-            background-color: #0284c7;
-            color: #ffffff;
-            box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #f8fafc;
+            font-size: 2.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #38bdf8;
         }
     </style>
 </head>
@@ -133,66 +153,79 @@
 
         <div class="grid">
             <!-- การ์ดที่ 1 -->
-            <div class="card">
+            <div class="card" onclick="openModal('P1.jpg')">
                 <img src="P1.jpg" alt="K-ENGINEERING KMITL" class="card-img">
                 <div class="card-content">
                     <h3>การทดสอบวัสดุวิศวกรรมโยธา</h3>
                     <p>เข้าร่วม WORKSHOP งาน K-ENGINEERING WORLD TOUR 2026 คณะวิศวกรรมศาสตร์ สจล.</p>
-                    <a href="project1.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
 
             <!-- การ์ดที่ 2 -->
-            <div class="card">
+            <div class="card" onclick="openModal('P2.jpg')">
                 <img src="P2.jpg" alt="First Aid Training" class="card-img">
                 <div class="card-content">
                     <h3>การปฐมพยาบาลฉุกเฉินและ CPR</h3>
                     <p>ผ่านการอบรมเชิงปฏิบัติการการปฐมพยาบาลและกู้ชีพขั้นพื้นฐาน โดยโรงพยาบาลบ้านบึง</p>
-                    <a href="project2.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
 
             <!-- การ์ดที่ 3 -->
-            <div class="card">
+            <div class="card" onclick="openModal('P3.jpg')">
                 <img src="P3.jpg" alt="KMUTNB PLC" class="card-img">
                 <div class="card-content">
                     <h3>การควบคุมอัตโนมัติด้วย PLC</h3>
                     <p>อบรมเชิงปฏิบัติการพื้นฐานการควบคุมอัตโนมัติ คณะวิศวกรรมศาสตร์ มจพ.</p>
-                    <a href="project3.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
 
             <!-- การ์ดที่ 4 -->
-            <div class="card">
+            <div class="card" onclick="openModal('P4.jpg')">
                 <img src="P4.jpg" alt="Robotics Competition" class="card-img">
                 <div class="card-content">
                     <h3>แข่งขันหุ่นยนต์ระดับสูง</h3>
                     <p>รางวัลระดับเหรียญเงิน กิจกรรมแข่งขันหุ่นยนต์ระดับสูง งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73</p>
-                    <a href="project4.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
 
             <!-- การ์ดที่ 5 -->
-            <div class="card">
+            <div class="card" onclick="openModal('P5.jpg')">
                 <img src="P5.jpg" alt="MikroTik MTCNA" class="card-img">
                 <div class="card-content">
                     <h3>MikroTik Certified (MTCNA)</h3>
                     <p>ผ่านการอบรมและรับรองมาตรฐานเครือข่ายระดับสากล MikroTik Network Associate</p>
-                    <a href="project5.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
 
             <!-- การ์ดที่ 6 -->
-            <div class="card">
+            <div class="card" onclick="openModal('P6.jpg')">
                 <img src="P6.jpg" alt="Technology Seminar" class="card-img">
                 <div class="card-content">
                     <h3>สัมมนาพัฒนาเทคโนโลยี</h3>
                     <p>เข้าร่วมการสัมมนา Technology Development Seminar ณ ห้อง Fabrication Laboratory</p>
-                    <a href="project6.html" class="btn-project">ดูรายละเอียดเพิ่มเติม →</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- ส่วนแสดงรูปภาพขยายใหญ่ (Modal) -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImg" class="modal-content" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
