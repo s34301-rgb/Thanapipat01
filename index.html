@@ -41,6 +41,9 @@
             background-color: rgba(15, 23, 42, 0.6);
             margin-bottom: 25px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .profile-frame:hover {
@@ -52,7 +55,7 @@
         .profile-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* ปรับขนาดรูปภาพให้อยู่ในกรอบอย่างสมบูรณ์แบบโดยรูปไม่ถูกตัด/ไม่เบี้ยว */
             display: block;
         }
 
@@ -97,7 +100,6 @@
 <body>
 
     <div class="profile-frame">
-        <!-- แก้ไข path รูปภาพให้เรียกใช้ไฟล์โปรไฟล์โดยตรง -->
         <img src="profile.jpg" alt="Profile Image" class="profile-img">
     </div>
 
