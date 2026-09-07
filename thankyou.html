@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            /* รูปพื้นหลังชุดเดียวกับหน้าอื่น */
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190617/ourmid/pngtree-blue-technology-background-banner-image_125518.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .thankyou-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(56, 189, 248, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 650px;
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7),
+                        0 0 25px rgba(56, 189, 248, 0.2);
+            text-align: center;
+        }
+
+        /* ส่วนแสดงรูปตนเอง */
+        .my-photo-frame {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #38bdf8;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .my-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #38bdf8;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .thank-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        /* ส่วนพื้นที่ใส่โลโก้และชื่อมหาวิทยาลัย */
+        .university-section {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid #334155;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .uni-logo {
+            max-width: 100px;
+            max-height: 100px;
+            object-fit: contain;
+        }
+
+        .uni-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            color: #94a3b8;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+        }
+
+        .btn:hover {
+            color: #ffffff;
+            background-color: #38bdf8;
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thankyou-card">
+        <!-- ใส่รูปหน้าตัวเองตรงนี้ (เปลี่ยนชื่อไฟล์เป็นรูปของคุณ เช่น profile.jpg) -->
+        <div class="my-photo-frame">
+            <img src="profile.jpg" alt="My Photo" class="my-photo">
+        </div>
+
+        <h1>THANK YOU</h1>
+        
+        <p class="thank-text">
+            ขอขอบพระคุณคณะกรรมการทุกท่านเป็นอย่างสูงที่ได้เสียสละเวลาในการรับชมและพิจารณาแฟ้มสะสมผลงานฉบับนี้<br>
+            หวังเป็นอย่างยิ่งว่าจะได้มีโอกาสเข้าศึกษาและเป็นส่วนหนึ่งของมหาวิทยาลัยครับ
+        </p>
+
+        <!-- โซนโลโก้และชื่อมหาวิทยาลัย -->
+        <div class="university-section">
+            <!-- เปลี่ยนชื่อไฟล์/URL รูปโลโก้มหาวิทยาลัยตรงนี้ -->
+            <img src="uni-logo.png" alt="University Logo" class="uni-logo">
+            <div class="uni-name">สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</div>
+        </div>
+
+        <div class="btn-group">
+            <a href="portfolio.html" class="btn">← ย้อนกลับไปหน้าผลงาน</a>
+            <a href="index.html" class="btn">กลับหน้าแรก 🏠</a>
+        </div>
+    </div>
+
+</body>
+</html>
