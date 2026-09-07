@@ -55,7 +55,7 @@
         .profile-img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* ปรับขนาดรูปภาพให้อยู่ในกรอบอย่างสมบูรณ์แบบโดยรูปไม่ถูกตัด/ไม่เบี้ยว */
+            object-fit: contain;
             display: block;
         }
 
@@ -76,23 +76,50 @@
             line-height: 1.8;
         }
 
+        /* ส่วนกลุ่มปุ่มกดสำหรับเปิดหน้าต่างๆ */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 700px;
+            width: 100%;
+        }
+
         .btn {
             display: inline-block;
-            padding: 14px 36px;
-            font-size: 1.1rem;
+            padding: 14px 28px;
+            font-size: 1rem;
             font-weight: bold;
-            color: #0f172a;
-            background-color: #38bdf8;
+            color: #ffffff;
+            background-color: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
         }
 
         .btn:hover {
+            background-color: rgba(56, 189, 248, 0.2);
+            border-color: #38bdf8;
+            color: #38bdf8;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+        }
+
+        /* ปุ่มหลักไฮไลท์สำหรับเริ่มอ่านตามลำดับ */
+        .btn-primary {
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: 1px solid #38bdf8;
+        }
+
+        .btn-primary:hover {
             background-color: #0284c7;
             color: #ffffff;
-            transform: translateY(-3px);
+            border-color: #0284c7;
             box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
         }
     </style>
@@ -105,7 +132,14 @@
 
     <h1>PORTFOLIO</h1>
     <p>ยินดีต้อนรับสู่แฟ้มสะสมผลงานของผม<br>นาย ธนาพิพัฒน์ เกียรติ์มีชัย<br>มัธยมศึกษาปีที่ 6 โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</p>
-    <a href="about.html" class="btn">เริ่มต้นรู้จักกัน →</a>
+
+    <!-- กลุ่มปุ่มเปิดไปยังหน้าต่างๆ -->
+    <div class="btn-group">
+        <a href="intro.html" class="btn btn-primary">เริ่มต้นอ่านคำนำ →</a>
+        <a href="about.html" class="btn">ประวัติส่วนตัว</a>
+        <a href="portfolio.html" class="btn">ผลงาน</a>
+        <a href="thankyou.html" class="btn">หน้าปิดท้าย</a>
+    </div>
 
 </body>
 </html>
