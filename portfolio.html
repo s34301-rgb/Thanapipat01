@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Works - Portfolio</title>
+    <title>My Works - Portfolio (พี)</title>
     <style>
         * {
             margin: 0;
@@ -81,11 +81,19 @@
             color: #ffffff;
         }
 
+        /* ปรับเป็น Grid 2 คอลัมน์คงที่เพื่อเรียงแบบ 1-2, 3-4, 5-6 */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
             margin-bottom: 40px;
+        }
+
+        /* รองรับการแสดงผลบนหน้าจอมือถือให้แสดง 1 คอลัมน์ */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -108,7 +116,7 @@
 
         .card-img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             display: block;
         }
@@ -129,32 +137,6 @@
         .card p {
             color: #94a3b8;
             font-size: 0.9rem;
-        }
-
-        /* ปุ่มด้านล่างสุดของหน้า */
-        .bottom-nav {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .btn-bottom {
-            display: inline-block;
-            padding: 14px 36px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #0f172a;
-            background-color: #38bdf8;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-        }
-
-        .btn-bottom:hover {
-            background-color: #0284c7;
-            color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
         }
 
         /* Modal สำหรับขยายรูปภาพขนาดเต็ม */
@@ -209,85 +191,29 @@
         </div>
 
         <div class="grid">
-            <!-- การ์ดที่ 1 -->
             <div class="card" onclick="openModal('P1.jpg')">
                 <img src="P1.jpg" alt="K-ENGINEERING KMITL" class="card-img">
                 <div class="card-content">
-                    <h3>การทดสอบวัสดุวิศวกรรมโยธา</h3>
+                    <h3>1. การทดสอบวัสดุวิศวกรรมโยธา</h3>
                     <p>เข้าร่วม WORKSHOP งาน K-ENGINEERING WORLD TOUR 2026 คณะวิศวกรรมศาสตร์ สจล.</p>
                 </div>
             </div>
 
-            <!-- การ์ดที่ 2 -->
             <div class="card" onclick="openModal('P2.jpg')">
                 <img src="P2.jpg" alt="First Aid Training" class="card-img">
                 <div class="card-content">
-                    <h3>การปฐมพยาบาลฉุกเฉินและ CPR</h3>
+                    <h3>2. การปฐมพยาบาลฉุกเฉินและ CPR</h3>
                     <p>ผ่านการอบรมเชิงปฏิบัติการการปฐมพยาบาลและกู้ชีพขั้นพื้นฐาน โดยโรงพยาบาลบ้านบึง</p>
                 </div>
             </div>
 
-            <!-- การ์ดที่ 3 -->
             <div class="card" onclick="openModal('P3.jpg')">
                 <img src="P3.jpg" alt="KMUTNB PLC" class="card-img">
                 <div class="card-content">
-                    <h3>การควบคุมอัตโนมัติด้วย PLC</h3>
+                    <h3>3. การควบคุมอัตโนมัติด้วย PLC</h3>
                     <p>อบรมเชิงปฏิบัติการพื้นฐานการควบคุมอัตโนมัติ คณะวิศวกรรมศาสตร์ มจพ.</p>
                 </div>
             </div>
 
-            <!-- การ์ดที่ 4 -->
             <div class="card" onclick="openModal('P4.jpg')">
-                <img src="P4.jpg" alt="Robotics Competition" class="card-img">
-                <div class="card-content">
-                    <h3>แข่งขันหุ่นยนต์ระดับสูง</h3>
-                    <p>รางวัลระดับเหรียญเงิน กิจกรรมแข่งขันหุ่นยนต์ระดับสูง งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73</p>
-                </div>
-            </div>
-
-            <!-- การ์ดที่ 5 -->
-            <div class="card" onclick="openModal('P5.jpg')">
-                <img src="P5.jpg" alt="MikroTik MTCNA" class="card-img">
-                <div class="card-content">
-                    <h3>MikroTik Certified (MTCNA)</h3>
-                    <p>ผ่านการอบรมและรับรองมาตรฐานเครือข่ายระดับสากล MikroTik Network Associate</p>
-                </div>
-            </div>
-
-            <!-- การ์ดที่ 6 -->
-            <div class="card" onclick="openModal('P6.jpg')">
-                <img src="P6.jpg" alt="Technology Seminar" class="card-img">
-                <div class="card-content">
-                    <h3>สัมมนาพัฒนาเทคโนโลยี</h3>
-                    <p>เข้าร่วมการสัมมนา Technology Development Seminar ณ ห้อง Fabrication Laboratory</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ปุ่มกดไปหน้าสุดท้ายด้านล่างสุด -->
-        <div class="bottom-nav">
-            <a href="thankyou.html" class="btn-bottom">ไปยังหน้าปิดท้าย →</a>
-        </div>
-    </div>
-
-    <!-- ส่วนแสดงรูปภาพขยายใหญ่ (Modal) -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="modal-close">&times;</span>
-        <img id="modalImg" class="modal-content" src="" alt="Enlarged Image">
-    </div>
-
-    <script>
-        function openModal(imgSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImg');
-            modal.style.display = 'flex';
-            modalImg.src = imgSrc;
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
-        }
-    </script>
-
-</body>
-</html>
+                <img src="P4.jpg"
