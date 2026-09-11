@@ -13,7 +13,6 @@
         }
 
         body {
-            /* เปลี่ยนลิงก์/ชื่อไฟล์รูปพื้นหลังตรงนี้ */
             background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190617/ourmid/pngtree-blue-technology-background-banner-image_125518.jpg');
             background-size: cover;
             background-position: center;
@@ -33,46 +32,60 @@
             border: 2px solid rgba(56, 189, 248, 0.5);
             border-radius: 20px;
             padding: 40px;
-            max-width: 650px;
+            max-width: 1100px; /* ขยายความกว้างรองรับ 2 คอลัมน์ */
             width: 100%;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7),
                         0 0 25px rgba(56, 189, 248, 0.2);
-            text-align: center;
         }
 
-        h1 {
+        .main-title {
             color: #38bdf8;
             font-size: 2.2rem;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             border-bottom: 2px solid #334155;
             padding-bottom: 15px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            text-align: center;
         }
 
-        h2 {
+        /* เลย์เอาต์แบ่งฝั่งซ้าย-ขวา */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        @media (max-width: 850px) {
+            .content-grid {
+                grid-template-columns: 1fr; /* ปรับเป็นคอลัมน์เดียวบนมือถือ */
+            }
+        }
+
+        /* ฝั่งซ้าย: ประวัติส่วนตัว */
+        .left-section h2, .right-section h2 {
             color: #38bdf8;
             font-size: 1.4rem;
-            margin: 25px 0 15px 0;
-            text-align: left;
+            margin-bottom: 20px;
             border-left: 4px solid #38bdf8;
             padding-left: 10px;
         }
 
         .info-list {
-            text-align: left;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .info-item {
             background: rgba(30, 41, 59, 0.7);
-            padding: 12px 20px;
+            padding: 12px 18px;
             border-radius: 10px;
             border: 1px solid #334155;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .info-label {
@@ -84,35 +97,70 @@
             color: #f8fafc;
         }
 
-        /* ส่วนความสามารถพิเศษ */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 35px;
+        /* ฝั่งขวา: ความสามารถพิเศษ + รูปภาพ */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
-        .skill-tag {
-            background: rgba(56, 189, 248, 0.15);
-            border: 1px solid rgba(56, 189, 248, 0.4);
-            color: #e0f2fe;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
+        @media (max-width: 500px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .skill-item {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
             transition: all 0.3s ease;
         }
 
-        .skill-tag:hover {
-            background: rgba(56, 189, 248, 0.3);
+        .skill-item:hover {
             border-color: #38bdf8;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.2);
         }
 
+        /* กรอบรูปภาพสำหรับแต่ละทักษะ */
+        .skill-img-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #0f172a;
+            border: 1px dashed rgba(56, 189, 248, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .skill-title {
+            color: #e0f2fe;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ปุ่มด้านล่าง */
         .btn-group {
             display: flex;
             justify-content: space-between;
             gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .btn {
@@ -153,47 +201,87 @@
 <body>
 
     <div class="about-card">
-        <h1>ABOUT ME</h1>
+        <h1 class="main-title">ABOUT ME</h1>
 
-        <div class="info-list">
-            <div class="info-item">
-                <span class="info-label">ชื่อ-นามสกุล:</span>
-                <span class="info-value">นาย ธนาพิพัฒน์ เกียรติ์มีชัย</span>
+        <div class="content-grid">
+            <!-- ฝั่งซ้าย: ประวัติส่วนตัว -->
+            <div class="left-section">
+                <h2>ข้อมูลส่วนตัว</h2>
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">ชื่อ-นามสกุล:</span>
+                        <span class="info-value">นาย ธนาพิพัฒน์ เกียรติ์มีชัย</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">ชื่อเล่น:</span>
+                        <span class="info-value">พี</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">อายุ:</span>
+                        <span class="info-value">17 ปี</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">วันเกิด:</span>
+                        <span class="info-value">29 ธันวาคม 2551</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">เชื้อชาติ / สัญชาติ:</span>
+                        <span class="info-value">ไทย / ไทย</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">ศาสนา:</span>
+                        <span class="info-value">พุทธ</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">เบอร์โทรติดต่อ:</span>
+                        <span class="info-value">0999999999</span>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-                <span class="info-label">ชื่อเล่น:</span>
-                <span class="info-value">พี</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">อายุ:</span>
-                <span class="info-value">17 ปี</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">วันเกิด:</span>
-                <span class="info-value">29 ธันวาคม 2551</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">เชื้อชาติ / สัญชาติ:</span>
-                <span class="info-value">ไทย / ไทย</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">ศาสนา:</span>
-                <span class="info-value">พุทธ</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">เบอร์โทรติดต่อ:</span>
-                <span class="info-value">0999999999</span>
-            </div>
-        </div>
 
-        <!-- หัวข้อความสามารถพิเศษ -->
-        <h2>ความสามารถพิเศษ (Skills)</h2>
-        <div class="skills-container">
-            <span class="skill-tag">🤖 การเขียนโปรแกรมควบคุมหุ่นยนต์</span>
-            <span class="skill-tag">🌐 การตั้งค่าระบบเครือข่าย (MikroTik / Networking)</span>
-            <span class="skill-tag">⚙️ การควบคุมระบบอัตโนมัติ (PLC)</span>
-            <span class="skill-tag">💻 การเขียนเว็บไซต์พื้นฐาน (HTML / CSS)</span>
-            <span class="skill-tag">🏥 การปฐมพยาบาลเบื้องต้น (CPR)</span>
+            <!-- ฝั่งขวา: ความสามารถพิเศษ + รูปภาพ -->
+            <div class="right-section">
+                <h2>ความสามารถพิเศษ (Skills)</h2>
+                <div class="skills-grid">
+                    
+                    <!-- ทักษะที่ 1 -->
+                    <div class="skill-item">
+                        <div class="skill-img-frame">
+                            <!-- เปลี่ยนชื่อไฟล์รูป skill-boxing.jpg ตามต้องการ -->
+                            <img src="skill-boxing.jpg" alt="ชกมวย" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป skill-boxing.jpg</span>'">
+                        </div>
+                        <div class="skill-title">🥊 ชกมวย (Boxing)</div>
+                    </div>
+
+                    <!-- ทักษะที่ 2 -->
+                    <div class="skill-item">
+                        <div class="skill-img-frame">
+                            <!-- เปลี่ยนชื่อไฟล์รูป skill-presentation.jpg ตามต้องการ -->
+                            <img src="skill-presentation.jpg" alt="การนำเสนองาน" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป skill-presentation.jpg</span>'">
+                        </div>
+                        <div class="skill-title">🎤 การนำเสนองาน</div>
+                    </div>
+
+                    <!-- ทักษะที่ 3 -->
+                    <div class="skill-item">
+                        <div class="skill-img-frame">
+                            <!-- เปลี่ยนชื่อไฟล์รูป skill-volunteer.jpg ตามต้องการ -->
+                            <img src="skill-volunteer.jpg" alt="งานจิตอาสา" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป skill-volunteer.jpg</span>'">
+                        </div>
+                        <div class="skill-title">🤝 งานจิตอาสา</div>
+                    </div>
+
+                    <!-- ทักษะที่ 4 -->
+                    <div class="skill-item">
+                        <div class="skill-img-frame">
+                            <!-- เปลี่ยนชื่อไฟล์รูป skill-sports.jpg ตามต้องการ -->
+                            <img src="skill-sports.jpg" alt="ด้านกีฬา" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป skill-sports.jpg</span>'">
+                        </div>
+                        <div class="skill-title">⚽ ความสามารถด้านกีฬา</div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <div class="btn-group">
