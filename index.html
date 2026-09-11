@@ -13,31 +13,63 @@
         }
 
         body {
-            /* ลบภาพพื้นหลังออก เปลี่ยนเป็นสีเรียบโทนเข้มเพื่อขับให้กระดาษ A4 เด่นขึ้น */
-            background-color: #0000CD;
+            /* เปลี่ยนพื้นหลังเป็นสีน้ำเงินอ่อน Gradient สบายตา */
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+            background-attachment: fixed;
             color: #1e293b;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* แสงเรืองวงกลมด้านหลัง เพิ่มมิติความนุ่มนวล */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+            top: -100px;
+            left: -100px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+            bottom: -150px;
+            right: -150px;
+            z-index: 0;
+            pointer-events: none;
         }
 
         /* กรอบทรงกระดาษ A4 */
         .a4-page {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             width: 100%;
             max-width: 794px; /* ความกว้างมาตรฐาน A4 บนหน้าจอ */
             aspect-ratio: 1 / 1.414; /* อัตราส่วนสัดส่วนกระดาษ A4 แนวตั้ง */
-            border-radius: 8px;
+            border-radius: 16px;
             padding: 50px 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 10px rgba(56, 189, 248, 0.2);
+            /* เพิ่มเงาและเส้นขอบกระจกใส */
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2), 
+                        0 0 0 1px rgba(255, 255, 255, 0.8) inset;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
+            z-index: 1;
         }
 
         .profile-frame {
@@ -47,7 +79,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 2px solid #0284c7;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2);
             background-color: #f1f5f9;
             margin-bottom: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -58,7 +90,7 @@
 
         .profile-frame:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(2, 132, 199, 0.25);
+            box-shadow: 0 12px 25px rgba(2, 132, 199, 0.3);
         }
 
         .profile-img {
@@ -105,14 +137,14 @@
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
         }
 
         .btn:hover {
-            background-color: #e0f2fe;
+            background-color: #bae6fd;
             color: #0369a1;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
         }
 
         /* ปุ่มหลักไฮไลท์สำหรับเริ่มอ่านตามลำดับ */
@@ -135,7 +167,7 @@
     <!-- โครงสร้างกระดาษ A4 -->
     <div class="a4-page">
         <div class="profile-frame">
-            <img src="my-photo.jpg" alt="Profile Image" class="profile-img">
+            <img src="my-photo.jpg" alt="Profile Image" class="profile-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป my-photo.jpg</span>'">
         </div>
 
         <h1>PORTFOLIO</h1>
