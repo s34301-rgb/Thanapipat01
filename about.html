@@ -13,7 +13,6 @@
         }
 
         body {
-            /* ปรับพื้นหลังเป็นสีน้ำเงินอ่อน (Soft Light Blue Gradient) */
             background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
             background-attachment: fixed;
             color: #0f172a;
@@ -25,11 +24,11 @@
         }
 
         .about-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border: 2px solid #38bdf8;
             border-radius: 20px;
-            padding: 40px;
+            padding: 35px;
             max-width: 1100px;
             width: 100%;
             box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15),
@@ -39,9 +38,9 @@
         .main-title {
             color: #0284c7;
             font-size: 2.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 2px solid #bae6fd;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
             text-align: center;
             font-weight: 800;
             letter-spacing: 1px;
@@ -51,20 +50,14 @@
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 35px;
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
-        @media (max-width: 850px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .left-section h2, .right-section h2 {
+        .left-section h2, .right-section h2, .activities-section h2 {
             color: #0369a1;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             border-left: 4px solid #0284c7;
             padding-left: 10px;
         }
@@ -72,13 +65,13 @@
         .info-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            font-size: 1rem;
+            gap: 10px;
+            font-size: 0.95rem;
         }
 
         .info-item {
             background: #f0f9ff;
-            padding: 12px 18px;
+            padding: 10px 15px;
             border-radius: 10px;
             border: 1px solid #bae6fd;
             display: flex;
@@ -98,22 +91,22 @@
 
         /* งานอดิเรก */
         .hobbies-title {
-            margin-top: 25px !important;
+            margin-top: 20px !important;
         }
 
         .hobbies-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .hobby-tag {
             background: #e0f2fe;
             border: 1px solid #38bdf8;
             color: #0369a1;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -123,27 +116,21 @@
             transform: translateY(-2px);
         }
 
-        /* ฝั่งขวา: ความสามารถพิเศษ + รูปภาพ */
+        /* ฝั่งขวา: ความสามารถพิเศษ */
         .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        @media (max-width: 500px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
         .skill-item {
             background: #f0f9ff;
             border: 1px solid #bae6fd;
             border-radius: 12px;
-            padding: 12px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             transition: all 0.3s ease;
         }
 
@@ -170,11 +157,68 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            cursor: pointer;
         }
 
         .skill-title {
             color: #0369a1;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* ส่วนกิจกรรม (เพิ่มใหม่ 6 รูป) */
+        .activities-section {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            border-top: 2px solid #bae6fd;
+            padding-top: 20px;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .activity-item {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .activity-item:hover {
+            border-color: #38bdf8;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.25);
+        }
+
+        .activity-img-frame {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e0f2fe;
+            border: 1px dashed #38bdf8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .activity-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+
+        .activity-title {
+            color: #0369a1;
+            font-size: 0.88rem;
             font-weight: 600;
             text-align: center;
         }
@@ -221,6 +265,39 @@
             color: #ffffff;
             box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
         }
+
+        /* Modal สำหรับดูรูปขยาย */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 850px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .activities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .skills-grid, .activities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -265,11 +342,10 @@
                         <span class="info-label">ที่อยู่อีเมล:</span>
                         <span class="info-value">lnwza05498@gmail.com</span>
                     </div>
-                    </div>
                 </div>
 
                 <!-- งานอดิเรก -->
-                <h2 class="hobbies-title"></h2>
+                <h2 class="hobbies-title">งานอดิเรก (Hobbies)</h2>
                 <div class="hobbies-container">
                     <span class="hobby-tag">🎨 วาดรูป</span>
                     <span class="hobby-tag">🏋️‍♂️ ออกกำลังกาย</span>
@@ -285,7 +361,7 @@
                     <!-- ทักษะที่ 1 -->
                     <div class="skill-item">
                         <div class="skill-img-frame">
-                            <img src="P13.jpg" alt="ชกมวย" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P13.jpg</span>'">
+                            <img src="P13.jpg" alt="ชกมวย" class="skill-img" onclick="openModal('P13.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P13.jpg</span>'">
                         </div>
                         <div class="skill-title">🥊 ชกมวย (Boxing)</div>
                     </div>
@@ -293,7 +369,7 @@
                     <!-- ทักษะที่ 2 -->
                     <div class="skill-item">
                         <div class="skill-img-frame">
-                            <img src="P11.jpg" alt="การนำเสนองาน" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P11.jpg</span>'">
+                            <img src="P11.jpg" alt="การนำเสนองาน" class="skill-img" onclick="openModal('P11.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P11.jpg</span>'">
                         </div>
                         <div class="skill-title">🎤 การนำเสนองาน</div>
                     </div>
@@ -301,7 +377,7 @@
                     <!-- ทักษะที่ 3 -->
                     <div class="skill-item">
                         <div class="skill-img-frame">
-                            <img src="P8.jpg" alt="งานจิตอาสา" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P8.jpg</span>'">
+                            <img src="P8.jpg" alt="งานจิตอาสา" class="skill-img" onclick="openModal('P8.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P8.jpg</span>'">
                         </div>
                         <div class="skill-title">🤝 งานจิตอาสา</div>
                     </div>
@@ -309,7 +385,7 @@
                     <!-- ทักษะที่ 4 -->
                     <div class="skill-item">
                         <div class="skill-img-frame">
-                            <img src="P12.jpg" alt="ด้านกีฬา" class="skill-img" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P12.jpg</span>'">
+                            <img src="P12.jpg" alt="ด้านกีฬา" class="skill-img" onclick="openModal('P12.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>ใส่รูป P12.jpg</span>'">
                         </div>
                         <div class="skill-title">⚽ ความสามารถด้านกีฬา</div>
                     </div>
@@ -318,11 +394,82 @@
             </div>
         </div>
 
+        <!-- ส่วนภาพกิจกรรม 6 รูป -->
+        <div class="activities-section">
+            <h2>📷 ภาพกิจกรรม (Activities)</h2>
+            <div class="activities-grid">
+                
+                <!-- กิจกรรมที่ 1 -->
+                <div class="activity-item">
+                    <div class="activity-img-frame">
+                        <img src="act1.jpg" alt="กิจกรรมที่ 1" class="activity-img" onclick="openModal('act1.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act1.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 1</div>
+                </div>
+
+                <!-- กิจกรรมที่ 2 -->
+                <div class="activity-item">
+                    <div class="activity-img-frame">
+                        <img src="act2.jpg" alt="กิจกรรมที่ 2" class="activity-img" onclick="openModal('act2.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act2.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 2</div>
+                </div>
+
+                <!-- กิจกรรมที่ 3 -->
+                <div class="activity-item">
+                    <div class="activity-img-frame">
+                        <img src="act3.jpg" alt="กิจกรรมที่ 3" class="activity-img" onclick="openModal('act3.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act3.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 3</div>
+                </div>
+
+                <!-- กิจกรรมที่ 4 -->
+                <div class="activity-item">
+                    <div class="activity-img-frame">
+                        <img src="act4.jpg" alt="กิจกรรมที่ 4" class="activity-img" onclick="openModal('act4.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act4.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 4</div>
+                </div>
+
+                <!-- กิจกรรมที่ 5 -->
+                <div class="activity-item">
+                    <div class="activity-img-frame">
+                        <img src="act5.jpg" alt="กิจกรรมที่ 5" class="activity-img" onclick="openModal('act5.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act5.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 5</div>
+                </div>
+
+                <!-- กิจกรรมที่ 6 -->
+                <div class="activity-item">
+                    <div class="activity-img-frame">
+                        <img src="act6.jpg" alt="กิจกรรมที่ 6" class="activity-img" onclick="openModal('act6.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act6.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 6</div>
+                </div>
+
+            </div>
+        </div>
+
         <div class="btn-group">
             <a href="intro.html" class="btn btn-secondary">← ย้อนกลับไปคำนำ</a>
             <a href="portfolio.html" class="btn btn-primary">เข้าดูผลงาน →</a>
         </div>
     </div>
+
+    <!-- Modal เปิดดูรูปขนาดใหญ่ -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImg" class="modal-content" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            document.getElementById('imageModal').style.display = 'flex';
+            document.getElementById('modalImg').src = imgSrc;
+        }
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
