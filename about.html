@@ -153,7 +153,6 @@
             align-items: center;
         }
 
-        /* object-fit: contain ป้องกันการตัดขอบรูปภาพ */
         .skill-img {
             max-width: 100%;
             max-height: 100%;
@@ -199,7 +198,7 @@
             box-shadow: 0 5px 15px rgba(56, 189, 248, 0.25);
         }
 
-        /* กรอบกิจกรรมยืดหยุ่นได้ทั้งแนวตั้งและแนวนอน */
+        /* กรอบรูปภาพกิจกรรมทั่วไป */
         .activity-img-frame {
             width: 100%;
             height: 200px;
@@ -213,7 +212,37 @@
             margin-bottom: 8px;
         }
 
-        /* object-fit: contain แสดงภาพกิจกรรมได้เต็มรูป ไม่หลุดขอบ */
+        /* กรอบรูปภาพแนวตั้ง 9:16 (สำหรับกิจกรรมที่ 7) */
+        .activity-img-frame-vertical {
+            width: 100%;
+            height: 260px;
+            aspect-ratio: 9 / 16;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e0f2fe;
+            border: 1px dashed #38bdf8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        /* กรอบรูปภาพแนวนอน 16:9 (สำหรับกิจกรรมที่ 8 และ 9) */
+        .activity-img-frame-horizontal {
+            width: 100%;
+            height: 200px;
+            aspect-ratio: 16 / 9;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e0f2fe;
+            border: 1px dashed #38bdf8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
         .activity-img {
             max-width: 100%;
             max-height: 100%;
@@ -403,7 +432,7 @@
             </div>
         </div>
 
-        <!-- ส่วนภาพกิจกรรม 6 รูป -->
+        <!-- ส่วนภาพกิจกรรม 9 รูป -->
         <div class="activities-section">
             <h2>📷 ภาพกิจกรรม (Activities)</h2>
             <div class="activities-grid">
@@ -454,6 +483,30 @@
                         <img src="P19.jpg" alt="กิจกรรมที่ 6" class="activity-img" onclick="openModal('P19.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P19.jpg</span>'">
                     </div>
                     <div class="activity-title">กิจกรรมที่ 6</div>
+                </div>
+
+                <!-- กิจกรรมที่ 7 (แนวตั้ง 9:16) -->
+                <div class="activity-item">
+                    <div class="activity-img-frame-vertical">
+                        <img src="P20.jpg" alt="กิจกรรมที่ 7" class="activity-img" onclick="openModal('P20.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P20.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 7</div>
+                </div>
+
+                <!-- กิจกรรมที่ 8 (แนวนอน 16:9) -->
+                <div class="activity-item">
+                    <div class="activity-img-frame-horizontal">
+                        <img src="P21.jpg" alt="กิจกรรมที่ 8" class="activity-img" onclick="openModal('P21.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P21.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 8</div>
+                </div>
+
+                <!-- กิจกรรมที่ 9 (แนวนอน 16:9) -->
+                <div class="activity-item">
+                    <div class="activity-img-frame-horizontal">
+                        <img src="P22.jpg" alt="กิจกรรมที่ 9" class="activity-img" onclick="openModal('P22.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P22.jpg</span>'">
+                    </div>
+                    <div class="activity-title">กิจกรรมที่ 9</div>
                 </div>
 
             </div>
