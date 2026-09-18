@@ -140,9 +140,10 @@
             box-shadow: 0 5px 15px rgba(56, 189, 248, 0.25);
         }
 
+        /* กรอบแสดงรูปสัดส่วนตามจริง */
         .skill-img-frame {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            height: 180px;
             border-radius: 8px;
             overflow: hidden;
             background-color: #e0f2fe;
@@ -152,10 +153,13 @@
             align-items: center;
         }
 
+        /* object-fit: contain ป้องกันการตัดขอบรูปภาพ */
         .skill-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             display: block;
             cursor: pointer;
         }
@@ -167,7 +171,7 @@
             text-align: center;
         }
 
-        /* ส่วนกิจกรรม (เพิ่มใหม่ 6 รูป) */
+        /* ส่วนกิจกรรม */
         .activities-section {
             margin-top: 10px;
             margin-bottom: 30px;
@@ -195,9 +199,10 @@
             box-shadow: 0 5px 15px rgba(56, 189, 248, 0.25);
         }
 
+        /* กรอบกิจกรรมยืดหยุ่นได้ทั้งแนวตั้งและแนวนอน */
         .activity-img-frame {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            height: 200px;
             border-radius: 8px;
             overflow: hidden;
             background-color: #e0f2fe;
@@ -208,10 +213,13 @@
             margin-bottom: 8px;
         }
 
+        /* object-fit: contain แสดงภาพกิจกรรมได้เต็มรูป ไม่หลุดขอบ */
         .activity-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             display: block;
             cursor: pointer;
         }
@@ -282,6 +290,7 @@
             max-width: 90%;
             max-height: 90%;
             border-radius: 10px;
+            object-fit: contain;
         }
 
         @media (max-width: 850px) {
@@ -402,7 +411,7 @@
                 <!-- กิจกรรมที่ 1 -->
                 <div class="activity-item">
                     <div class="activity-img-frame">
-                        <img src="P14.jpg" alt="กิจกรรมที่ 1" class="activity-img" onclick="openModal('act1.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act1.jpg</span>'">
+                        <img src="P14.jpg" alt="กิจกรรมที่ 1" class="activity-img" onclick="openModal('P14.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P14.jpg</span>'">
                     </div>
                     <div class="activity-title">กิจกรรมที่ 1</div>
                 </div>
@@ -410,7 +419,7 @@
                 <!-- กิจกรรมที่ 2 -->
                 <div class="activity-item">
                     <div class="activity-img-frame">
-                        <img src="P15.jpg" alt="กิจกรรมที่ 2" class="activity-img" onclick="openModal('act2.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act2.jpg</span>'">
+                        <img src="P15.jpg" alt="กิจกรรมที่ 2" class="activity-img" onclick="openModal('P15.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P15.jpg</span>'">
                     </div>
                     <div class="activity-title">กิจกรรมที่ 2</div>
                 </div>
@@ -418,7 +427,7 @@
                 <!-- กิจกรรมที่ 3 -->
                 <div class="activity-item">
                     <div class="activity-img-frame">
-                        <img src="P16.jpg" alt="กิจกรรมที่ 3" class="activity-img" onclick="openModal('act3.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act3.jpg</span>'">
+                        <img src="P16.jpg" alt="กิจกรรมที่ 3" class="activity-img" onclick="openModal('P16.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P16.jpg</span>'">
                     </div>
                     <div class="activity-title">กิจกรรมที่ 3</div>
                 </div>
@@ -426,7 +435,7 @@
                 <!-- กิจกรรมที่ 4 -->
                 <div class="activity-item">
                     <div class="activity-img-frame">
-                        <img src="P17.jpg" alt="กิจกรรมที่ 4" class="activity-img" onclick="openModal('act4.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act4.jpg</span>'">
+                        <img src="P17.jpg" alt="กิจกรรมที่ 4" class="activity-img" onclick="openModal('P17.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P17.jpg</span>'">
                     </div>
                     <div class="activity-title">กิจกรรมที่ 4</div>
                 </div>
@@ -434,7 +443,7 @@
                 <!-- กิจกรรมที่ 5 -->
                 <div class="activity-item">
                     <div class="activity-img-frame">
-                        <img src="P18.jpg" alt="กิจกรรมที่ 5" class="activity-img" onclick="openModal('act5.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act5.jpg</span>'">
+                        <img src="P18.jpg" alt="กิจกรรมที่ 5" class="activity-img" onclick="openModal('P18.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P18.jpg</span>'">
                     </div>
                     <div class="activity-title">กิจกรรมที่ 5</div>
                 </div>
@@ -442,7 +451,7 @@
                 <!-- กิจกรรมที่ 6 -->
                 <div class="activity-item">
                     <div class="activity-img-frame">
-                        <img src="P19.jpg" alt="กิจกรรมที่ 6" class="activity-img" onclick="openModal('act6.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป act6.jpg</span>'">
+                        <img src="P19.jpg" alt="กิจกรรมที่ 6" class="activity-img" onclick="openModal('P19.jpg')" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-size:0.8rem; color:#64748b;\'>รูป P19.jpg</span>'">
                     </div>
                     <div class="activity-title">กิจกรรมที่ 6</div>
                 </div>
